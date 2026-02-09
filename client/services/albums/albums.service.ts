@@ -10,8 +10,8 @@ export async function fetchAllAlbumsWithContents(): Promise<Album[]> {
     title: album.title,
     description: album.description,
     content: data.allAlbumContent
-      .filter((ac) => ac.album?._id === album._id)
-      .flatMap(ac => ac.content?.map(img => ({
+      .filter((ac: any) => ac.album?._id === album._id)
+      .flatMap((ac:any) => ac.content?.map((img:any) => ({
         _id: img.asset._id,
         url: img.asset.url,
         metadata: img.asset.metadata
