@@ -90,10 +90,10 @@ export default function Home() {
           ))}
         </div>
 
-        <div className="my-8 text-center">
+        <div className="my-8 mt-15 text-center">
           <a
             href="/work"
-            className="border-1 border-primary-accent text-text-secondary py-2 px-10 rounded-sm"
+            className="cursor-pointer rounded-sm border border-[#141118] dark:border-white text-[#141118] dark:text-white px-8 py-5 text-xs uppercase tracking-[0.3em] font-bold hover:bg-primary-accent hover:border-none hover:rounded-md hover:text-white dark:hover:bg-white dark:hover:text-background-dark transition-all duration-300"
           >
             View More
           </a>
