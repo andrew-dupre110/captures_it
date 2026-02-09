@@ -1,6 +1,5 @@
 import React from "react";
-import Image from "next/image";
-import { siFacebook, siInstagram } from "simple-icons";
+import { siInstagram } from "simple-icons";
 
 const Footer = () => {
   return (

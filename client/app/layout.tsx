@@ -28,9 +28,11 @@ export default function RootLayout({
   return (
     <html lang="en" className={`${inter.variable} ${notoSerif.variable}`}>
       <body className={`font-sans antialiased`}>
-        <Navbar />
-        {children}
-        <Footer />
+        <div className="min-h-screen flex flex-col">
+          <Navbar />
+          <main className="flex-1">{children}</main>
+          <Footer />
+        </div>
       </body>
     </html>
   );

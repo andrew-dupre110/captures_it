@@ -23,12 +23,15 @@ const page = () => {
           </div>
 
           <div className="mr-30">
+            <div className="bg-primary-accent/50 p-7 rounded-lg rotate-2">
             <Image
               alt="owner-image"
               src="/images/owner.jpeg"
-              height={400}
-              width={200}
+              height={700}
+              width={400}
+              className="-rotate-2 rounded-lg"
             />
+            </div>
           </div>
         </div>
       </div>

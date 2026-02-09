@@ -1,25 +1,52 @@
 export const GET_ALBUMS_QUERY = `
 query GetAlbumsWithContent {
-    allAlbum {
-        title
-        description
+  allAlbum(where: { title: { neq: "Home" } }) {
+    title
+    description
+    _id
+  }
+  allAlbumContent(where: { album: { title: { neq: "Home" } } }) {
+    album {
+      _id
+    }
+    content {
+      asset {
         _id
-    }
-    allAlbumContent {
-        album {
-            _id
+        url
+        metadata {
+          dimensions {
+            width
+            height
+          }
         }
-        content {
-            asset {
-                _id
-                url
-                metadata {
-                    dimensions {
-                        width
-                        height
-                    }
-                }
-            }
-        }
+      }
     }
+  }
 }`;
+
+export const GET_HOME_ALBUM = `
+query GetHomeAlbum {
+  allAlbum(where: { title: { eq: "Home" } }) {
+    _id
+    title
+    description
+  }
+  allAlbumContent(where: { album: { title: { eq: "Home" } } }) {
+    album {
+      _id
+    }
+    content {
+      asset {
+        _id
+        url
+        metadata {
+          dimensions {
+            width
+            height
+          }
+        }
+      }
+    }
+  }
+}
+`;
