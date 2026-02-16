@@ -3,7 +3,7 @@ import { siInstagram } from "simple-icons";
 
 const Footer = () => {
   return (
-    <div className="min-h-[10dvh] max-h-[10dvh] border-t-1 border-text-secondary/10 mt-8 flex items-center py-4  px-[2dvw] justify-between">
+    <div className="min-h-[8dvh] max-h-[8dvh] border-t-1 border-text-secondary/10 flex items-center py-4  px-[2dvw] justify-between bg-black">
       <p className="text-text-secondary font-light text-xs">
         <span className="text-focus font-bold">captures_it</span> / ©
         {new Date().getFullYear().toString()} Emilie Isabelle

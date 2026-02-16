@@ -3,7 +3,7 @@ import React from "react";
 
 const page = () => {
   return (
-    <div className="bg-white mx-[2dvw]">
+    <div className="bg-white mx-[2dvw] min-h-[calc(100dvh-16dvh)]">
       <div className="mt-[5dvh]">
         <div className="flex mt-8 gap-10">
           <div>
