@@ -4,8 +4,8 @@ import Masonry from "@/components/Masonry";
 import { AlbumContent } from "@/types/album";
 
 const DisplayMasonry = ({ albumContent }: { albumContent: AlbumContent[] }) => {
-  const content = albumContent.map((album) => ({
-    id: album._id,
+  const content = albumContent.map((album, idx) => ({
+    id: idx as string,
     img: album.url,
     url: album.url,
     height: album.metadata.dimensions.height / 7,
