@@ -60,7 +60,7 @@ export default function Home() {
                 </div>
               ))
             : (homeAlbum?.content ?? []).map((image, idx) => (
-            <div key={image._id} className="min-h-[70%] overflow-hidden rounded-md ">
+            <div key={idx} className="min-h-[70%] overflow-hidden rounded-md ">
               <div className="relative h-full w-full">
                 {/* Skeleton */}
                 {!loaded[idx] && (
