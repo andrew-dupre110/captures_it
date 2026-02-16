@@ -5,7 +5,7 @@ import { AlbumContent } from "@/types/album";
 
 const DisplayMasonry = ({ albumContent }: { albumContent: AlbumContent[] }) => {
   const content = albumContent.map((album, idx) => ({
-    id: idx as string,
+    id: `image-${idx}`,
     img: album.url,
     url: album.url,
     height: album.metadata.dimensions.height / 7,
