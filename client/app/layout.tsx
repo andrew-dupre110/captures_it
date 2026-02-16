@@ -30,7 +30,7 @@ export default function RootLayout({
       <body className={`font-sans antialiased`}>
         <div className="min-h-screen flex flex-col">
           <Navbar />
-          <main className="flex-1">{children}</main>
+          <main className="max-h-[calc(100dvh-16dvh)]">{children}</main>
           <Footer />
         </div>
       </body>
