@@ -1,6 +1,11 @@
 "use client";
 
-import React, { useCallback, useState, ViewTransition, startTransition } from "react";
+import React, {
+  useCallback,
+  useState,
+  ViewTransition,
+  startTransition,
+} from "react";
 import { Inter, Noto_Serif } from "next/font/google";
 
 import "../styles/globals.css";
@@ -26,7 +31,7 @@ export default function RootLayout({
   const [pageLoaded, setPageLoaded] = useState(false);
 
   const animationEnded = useCallback(() => {
-    startTransition(() => setPageLoaded(true))
+    startTransition(() => setPageLoaded(true));
   }, []);
 
   return (
@@ -34,11 +39,13 @@ export default function RootLayout({
       <body className={`font-sans antialiased`}>
         <div className="min-h-screen flex flex-col bg-black">
           {pageLoaded ? (
-            <ViewTransition default="fadeInDown">
+            <>
               <Navbar />
-              <main className="max-h-[calc(100dvh-16dvh)]">{children}</main>
+              <ViewTransition default="fadeInDown">
+                <main className="min-h[calc(100dvh-16dvh)] max-h-[calc(100dvh-16dvh)]">{children}</main>
+              </ViewTransition>
               <Footer />
-            </ViewTransition>
+            </>
           ) : (
             <Camera onAnimationEnd={animationEnded} />
           )}
