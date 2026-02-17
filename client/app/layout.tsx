@@ -5,6 +5,7 @@ import React, {
   useState,
   ViewTransition,
   startTransition,
+  useRef,
 } from "react";
 import { Inter, Noto_Serif } from "next/font/google";
 
@@ -29,16 +30,18 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   const [pageLoaded, setPageLoaded] = useState(false);
+  const pageloadedFRef = useRef(false)
 
   const animationEnded = useCallback(() => {
     startTransition(() => setPageLoaded(true));
+    pageloadedFRef.current = true
   }, []);
 
   return (
     <html lang="en" className={`${inter.variable} ${notoSerif.variable}`}>
       <body className={`font-sans antialiased`}>
         <div className="min-h-screen flex flex-col bg-black">
-          {pageLoaded ? (
+          {pageLoaded || pageloadedFRef.current ? (
             <>
               <Navbar />
               <ViewTransition default="fadeInDown">
