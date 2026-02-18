@@ -7,7 +7,7 @@ const Camera = ({ onAnimationEnd }: { onAnimationEnd: () => void }) => {
   const [mounted, setMounted] = useState(false);
 
   useEffect(() => {
-    const timeout = setTimeout(() => setMounted(true), 500);
+    const timeout = setTimeout(() => setMounted(true), 700);
 
     return () => clearTimeout(timeout);
   });
