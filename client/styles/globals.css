@@ -141,9 +141,9 @@
 }
 
 ::view-transition-old(.fadeInDown) {
-  animation: fadeInDown 500ms reverse;
+  animation: fadeInDown 700ms reverse;
 }
 
 ::view-transition-new(.fadeInDown) {
-  animation: fadeInDown 500ms forwards;
+  animation: fadeInDown 700ms forwards;
 }
