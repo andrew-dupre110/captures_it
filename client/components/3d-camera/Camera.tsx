@@ -6,21 +6,21 @@ import Image from "next/image";
 const Camera = ({ onAnimationEnd }: { onAnimationEnd: () => void }) => {
   const [mounted, setMounted] = useState(false);
 
-  useEffect(() => {
-    const timeout = setTimeout(() => setMounted(true), 700);
+  // useEffect(() => {
+  //   const timeout = setTimeout(() => setMounted(true), 700);
 
-    return () => clearTimeout(timeout);
-  });
+  //   return () => clearTimeout(timeout);
+  // });
 
   useEffect(() => {
-    const timeout = setTimeout(() => onAnimationEnd(), 2500);
+    const timeout = setTimeout(() => onAnimationEnd(), 5500);
 
     return () => clearTimeout(timeout);
   });
 
   return (
     <div className="h-screen max-h-screen bg-black">
-      {!mounted && (
+      {/* {!mounted && (
         <div className="h-screen max-h-screen grid items-center justify-center">
           <Image
             src={"/images/Untitled - Copy@1-1800x919.png"}
@@ -29,7 +29,7 @@ const Camera = ({ onAnimationEnd }: { onAnimationEnd: () => void }) => {
             width={1500}
           />
         </div>
-      )}
+      )} */}
 
       <Spline scene="https://prod.spline.design/D2ivnVqf9GLJM2h8/scene.splinecode" />
     </div>
