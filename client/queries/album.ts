@@ -1,11 +1,11 @@
 export const GET_ALBUMS_QUERY = `
 query GetAlbumsWithContent {
-  allAlbum(where: { title: { neq: "Home" } }) {
+  allAlbum() {
     title
     description
     _id
   }
-  allAlbumContent(where: { album: { title: { neq: "Home" } } }) {
+  allAlbumContent() {
     album {
       _id
     }

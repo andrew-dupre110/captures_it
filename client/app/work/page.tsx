@@ -1,6 +1,5 @@
 import { fetchAllAlbumsWithContents } from "@/services/albums/albums.service";
 import React from "react";
-import Masonry from "@/components/Masonry";
 import { AlbumContent } from "@/types/album";
 
 const page = async () => {
