@@ -5,7 +5,7 @@ import Spline from "@splinetool/react-spline";
 const Camera = ({ onAnimationEnd }: { onAnimationEnd: () => void }) => {
 
   useEffect(() => {
-    const timeout = setTimeout(() => onAnimationEnd(), 5500);
+    const timeout = setTimeout(() => onAnimationEnd(), 2500);
 
     return () => clearTimeout(timeout);
   });

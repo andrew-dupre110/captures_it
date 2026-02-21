@@ -23,30 +23,3 @@ query GetAlbumsWithContent {
     }
   }
 }`;
-
-export const GET_HOME_ALBUM = `
-query GetHomeAlbum {
-  allAlbum(where: { title: { eq: "Home" } }) {
-    _id
-    title
-    description
-  }
-  allAlbumContent(where: { album: { title: { eq: "Home" } } }) {
-    album {
-      _id
-    }
-    content {
-      asset {
-        _id
-        url
-        metadata {
-          dimensions {
-            width
-            height
-          }
-        }
-      }
-    }
-  }
-}
-`;

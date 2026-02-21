@@ -3,7 +3,6 @@
 import React, {
   useCallback,
   useState,
-  ViewTransition,
   startTransition,
   useRef,
 } from "react";
@@ -40,13 +39,11 @@ export default function RootLayout({
   return (
     <html lang="en" className={`${inter.variable} ${notoSerif.variable}`}>
       <body className={`font-sans antialiased`}>
-        <div className="min-h-screen flex flex-col bg-black">
+        <div className="min-h-screen flex flex-col">
           {pageLoaded || pageloadedFRef.current ? (
             <>
               <Navbar />
-              <ViewTransition default="fadeInDown">
                 <main className="min-h[calc(100dvh-16dvh)] max-h-[calc(100dvh-16dvh)]">{children}</main>
-              </ViewTransition>
               <Footer />
             </>
           ) : (

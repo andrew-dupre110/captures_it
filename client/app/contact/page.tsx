@@ -5,7 +5,7 @@ import { SendHorizonal} from "lucide-react"
 const page = () => {
 
   return (
-    <div className="px-[20dvw] mt-5">
+    <div className="container px-[20dvw] mt-5">
       <div className="layout-content-container flex flex-col max-w-[1200px] w-full">
         <div className="flex flex-col gap-6 mb-10">
           <h1 className="text-[#141118] dark:text-white text-4xl md:text-5xl font-light tracking-tight text-primary-accent">
@@ -120,11 +120,6 @@ const page = () => {
                   </a>
                 </div>
               </div>
-            </div>
-            <div className="mt-20 lg:mt-0 flex items-end">
-              <span className="text-[64px] font-black text-primary-accent/40 dark:text-primary/10 select-none">
-                ei.
-              </span>
             </div>
           </div>
         </div>

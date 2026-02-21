@@ -129,21 +129,9 @@
   }
 }
 
-@keyframes fadeInDown {
-  from{
-    opacity: 0;
-    transform: translate3d(-5%, 0,0);
-  }
-  to {
-    opacity: 1;
-    transform: translate3d(0, 0, 0);
-  }
-}
-
-::view-transition-old(.fadeInDown) {
-  animation: fadeInDown 700ms reverse;
-}
-
-::view-transition-new(.fadeInDown) {
-  animation: fadeInDown 700ms forwards;
+.container{
+  min-height: calc(100dvh - 16dvh);
+  max-height: calc(100dvh - 16dvh);
+  
+  min-width: 100dvw;
 }
