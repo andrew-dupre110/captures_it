@@ -1,11 +1,11 @@
 export const GET_ALBUMS_QUERY = `
 query GetAlbumsWithContent {
-  allAlbum() {
+  allAlbum{
     title
     description
     _id
   }
-  allAlbumContent() {
+  allAlbumContent{
     album {
       _id
     }
