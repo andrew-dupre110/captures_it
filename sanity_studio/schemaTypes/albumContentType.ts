@@ -36,4 +36,14 @@ export const albumContentType = defineType({
         }),
     }),
   ],
+  preview:{
+    select: {
+      albumTitle: 'album.title',
+    },
+    prepare({albumTitle}: {albumTitle: string}) {
+      return {
+        title: albumTitle || 'Untitled album',
+      }
+    },
+  }
 })
