@@ -1,6 +1,5 @@
 import { fetchAllAlbumsWithContents } from "@/services/albums/albums.service";
 import React from "react";
-import { AlbumContent } from "@/types/album";
 
 const page = async () => {
   const albums = await fetchAllAlbumsWithContents();
