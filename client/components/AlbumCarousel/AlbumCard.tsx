@@ -1,4 +1,4 @@
-import Image from "next/image";
+import ImageWithSkeleton from "@/components/ImageWithSkeleton";
 import Link from "next/link";
 import { Album } from "@/types/album";
 
@@ -18,11 +18,11 @@ const AlbumCard = ({ album, isActive }: AlbumCardProps) => {
         }`}
       >
         {cover ? (
-          <Image
+          <ImageWithSkeleton
             src={cover.url}
             alt={album.title}
             fill
-            sizes="260px"
+            sizes="(max-width: 640px) 200px, 260px"
             className="object-cover"
             draggable={false}
           />

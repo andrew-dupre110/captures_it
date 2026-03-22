@@ -1,5 +1,5 @@
 import { fetchAllAlbumsWithContents } from "@/services/albums/albums.service";
-import Image from "next/image";
+import ImageWithSkeleton from "@/components/ImageWithSkeleton";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import AnimatedContent from "@/components/AnimatedContent";
@@ -39,13 +39,14 @@ const page = async ({ params }: PageProps) => {
         <AnimatedContent distance={50} duration={1} delay={0.2}>
           <div className="columns-2 md:columns-3 lg:columns-4 gap-3">
             {album.content.map((image) => (
-              <div key={image._id} className="mb-3 break-inside-avoid">
-                <Image
+              <div key={image._id} className="mb-3 break-inside-avoid relative overflow-hidden rounded-lg">
+                <ImageWithSkeleton
                   src={image.url}
                   alt={album.title}
                   width={image.metadata.dimensions.width}
                   height={image.metadata.dimensions.height}
-                  className="w-full object-cover rounded-lg"
+                  sizes="(max-width: 640px) 50vw, (max-width: 1024px) 33vw, 25vw"
+                  className="w-full object-cover"
                 />
               </div>
             ))}

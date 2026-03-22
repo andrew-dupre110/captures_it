@@ -101,6 +101,7 @@ export default function Home() {
             alt="Home bg image"
             width={800}
             height={300}
+            priority
             className="mt-[20dvh] ml-[4dvw]"
           />
         </div>

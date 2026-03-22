@@ -134,6 +134,22 @@
   min-width: 100dvw;
 }
 
+img {
+  -webkit-user-drag: none;
+  user-select: none;
+}
+
+@keyframes shimmer {
+  0%   { background-position: -200% 0; }
+  100% { background-position:  200% 0; }
+}
+
+.skeleton-shimmer {
+  background: linear-gradient(90deg, #1a1a1a 25%, #2a2a2a 50%, #1a1a1a 75%);
+  background-size: 200% 100%;
+  animation: shimmer 1.5s infinite linear;
+}
+
 .minimal-input {
   @apply bg-transparent border-b border-white/20 text-white pb-3 w-full transition-colors duration-200 focus:border-white/60 focus:outline-none;
 }
