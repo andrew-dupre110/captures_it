@@ -13,7 +13,7 @@ const AlbumCard = ({ album, isActive }: AlbumCardProps) => {
   return (
     <Link href={`/work/${album._id}`} className="block select-none h-full">
       <div
-        className={`relative w-[260px] h-full transition-transform duration-300 ease-out cursor-pointer overflow-hidden rounded-lg ${
+        className={`relative w-[200px] sm:w-[260px] h-full transition-transform duration-300 ease-out cursor-pointer overflow-hidden rounded-lg ${
           isActive ? "scale-100" : "scale-90"
         }`}
       >

@@ -6,24 +6,24 @@ import AnimatedContent from "@/components/AnimatedContent";
 const page = () => {
   return (
     <div className="container bg-black overflow-clip">
-      <div className="font-sans mx-[4dvw] h-[84dvh] text-white flex justify-between items-center gap-16">
+      <div className="font-sans mx-[4dvw] py-10 lg:py-0 lg:h-[84dvh] text-white flex flex-col lg:flex-row justify-between items-start lg:items-center gap-8 lg:gap-16">
 
         {/* Left — form */}
-        <div className="flex flex-col items-start flex-1 max-w-[55dvw]">
+        <div className="flex flex-col items-start w-full lg:flex-1">
           <AnimatedContent distance={30} duration={0.8}>
             <p className="text-primary-accent text-xs uppercase tracking-[0.3em] mb-4">
               Get in Touch
             </p>
             <SplitText
               text="Let's capture it."
-              className="text-5xl uppercase font-bold"
+              className="text-3xl md:text-5xl uppercase font-bold"
               splitType="words"
               duration={2}
               tag="h1"
               textAlign="start"
             />
             <div className="w-8 h-px bg-primary-accent mt-4 mb-6" />
-            <p className="text-lg font-semibold text-white/70 max-w-xl mb-8">
+            <p className="text-base md:text-lg font-semibold text-white/70 max-w-xl mb-8">
               Whether you&apos;re planning an editorial shoot or looking to
               capture life&apos;s quietest moments, I&apos;d love to hear from
               you.
@@ -32,7 +32,7 @@ const page = () => {
 
           <AnimatedContent distance={30} duration={0.8} delay={0.25} className="w-full">
             <form className="flex flex-col gap-8 w-full">
-              <div className="flex gap-8">
+              <div className="flex flex-col sm:flex-row gap-8">
                 <label className="flex flex-col flex-1 gap-2">
                   <span className="text-xs uppercase tracking-[0.3em] text-white/30">
                     Name
@@ -97,7 +97,7 @@ const page = () => {
           distance={30}
           duration={0.8}
           delay={0.4}
-          className="flex flex-col gap-12 self-center shrink-0"
+          className="flex flex-col gap-12 self-start lg:self-center shrink-0 pb-10 lg:pb-0"
         >
           <div className="flex flex-col gap-4">
             <p className="text-primary-accent text-xs uppercase tracking-[0.3em]">

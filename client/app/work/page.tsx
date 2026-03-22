@@ -8,7 +8,7 @@ const page = async () => {
 
   return (
     <div className="container bg-black overflow-clip">
-      <div className="font-sans h-[84dvh] text-white flex flex-col">
+      <div className="font-sans h-[60dvh] md:h-[84dvh] text-white flex flex-col">
         <AnimatedContent
           distance={30}
           duration={0.8}
