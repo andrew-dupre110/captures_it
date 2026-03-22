@@ -42,7 +42,12 @@ export default function RootLayout({
 
   return (
     <html lang="en" className={`${inter.variable} ${notoSerif.variable}`}>
-      <body className={`font-sans antialiased bg-black`}>
+      <body
+        className={`font-sans antialiased bg-black`}
+        onContextMenu={(e) => {
+          if ((e.target as HTMLElement).tagName === "IMG") e.preventDefault();
+        }}
+      >
         <div className="h-screen flex flex-col overflow-hidden">
           {pageLoaded || pageloadedFRef.current ? (
             <>
