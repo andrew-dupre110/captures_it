@@ -1,11 +1,6 @@
 "use client";
 
-import React, {
-  useCallback,
-  useState,
-  startTransition,
-  useRef,
-} from "react";
+import React, { useCallback, useState, startTransition } from "react";
 import { Inter, Noto_Serif } from "next/font/google";
 import dynamic from "next/dynamic";
 
@@ -32,12 +27,17 @@ export default function RootLayout({
 }: Readonly<{
   children: React.ReactNode;
 }>) {
-  const [pageLoaded, setPageLoaded] = useState(false);
-  const pageloadedFRef = useRef(false)
+  // `revealed` mounts the page under the intro overlay when the shutter fires;
+  // `introDone` unmounts the overlay once it has faded out completely.
+  const [revealed, setRevealed] = useState(false);
+  const [introDone, setIntroDone] = useState(false);
 
-  const animationEnded = useCallback(() => {
-    startTransition(() => setPageLoaded(true));
-    pageloadedFRef.current = true
+  const onCapture = useCallback(() => {
+    startTransition(() => setRevealed(true));
+  }, []);
+
+  const onComplete = useCallback(() => {
+    startTransition(() => setIntroDone(true));
   }, []);
 
   return (
@@ -49,16 +49,19 @@ export default function RootLayout({
         }}
       >
         <div className="h-screen flex flex-col overflow-hidden">
-          {pageLoaded || pageloadedFRef.current ? (
+          {revealed && (
             <>
               <Navbar />
-              <main id="snap-main-container" className="flex-1 overflow-y-auto">{children}</main>
+              <main id="snap-main-container" className="flex-1 overflow-y-auto">
+                {children}
+              </main>
               <Footer />
             </>
-          ) : (
-            <Camera onAnimationEnd={animationEnded} />
           )}
         </div>
+        {!introDone && (
+          <Camera onCapture={onCapture} onComplete={onComplete} />
+        )}
       </body>
     </html>
   );
